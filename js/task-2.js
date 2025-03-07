@@ -26,19 +26,13 @@ const images = [
 ];
 const gallery = document.querySelector('.gallery');
 
-gallery.style.display = 'flex';
-gallery.style.flexWrap = 'wrap';
-gallery.style.gap = '90px';
-gallery.style.listStyle = 'none';
-gallery.style.alignItems = 'center';
-gallery.style.justifyContent = 'center';
+const galleryItems = images.map(image => {
+  const li = document.createElement('li');
+  const img = document.createElement('img');
+  img.src = image.url;
+  img.alt = image.alt;
+  li.appendChild(img);
+  return li;
+});
 
-gallery.insertAdjacentHTML(
-  'beforeend',
-  images
-    .map(
-      ({ url, alt }) =>
-        `<li><img src="${url}" alt="${alt}" style="width: 300px; height: 200px;"></li>`
-    )
-    .join('')
-);
+gallery.append(...galleryItems);

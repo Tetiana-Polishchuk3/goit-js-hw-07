@@ -58,6 +58,38 @@ a:hover {
   align-items: center;
   padding-left: 16px;
 }
+/* task 2 */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 80%;
+}
+
+.gallery li {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img {
+  display: block;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
 /* task 3 */
 #name-input {
   width: 250px;
